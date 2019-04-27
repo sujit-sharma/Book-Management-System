@@ -23,4 +23,4 @@ let bookSchema = mongoose.Schema({
 
 })
 
-let Book = module.exports = mongoose.model('Book', bookSchema);
+module.exports = mongoose.model('Book', bookSchema);

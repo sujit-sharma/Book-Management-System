@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.get('/',(req,res) => {
     Book.find(function(err, bookList) {
         if(err) res.send({error: err.message})
+        console.log(bookList, '>>>>')
         res.send(bookList)
     })
 });
