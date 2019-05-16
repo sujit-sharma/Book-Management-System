@@ -12,13 +12,12 @@ let bookSchema = mongoose.Schema({
         required:true
     },
     price:{
-        type:Number,
-        required:true
+        type:Number
 
     },
     content:{
-        type: String,
-        required: true
+        type: String
+        
     }
 
 })
