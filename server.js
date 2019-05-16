@@ -1,13 +1,40 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
-app.get('/', function (req, res) {
-   res.send('Hello sWorld');
-})
 
-var server = app.listen(8084, function () {
-   var host = server.address().address
-   var port = server.address().port
+
+let Book = require('./model/book');
+
+const app = express();
+
+app.use(bodyParser.json());
+app.get('/',(req,res) => {
+    Book.find(function(err, bookList) {
+        if(err) res.send({error: err.message})
+        console.log(bookList, '>>>>')
+        res.send(bookList)
+    })
+});
+
+app.post('/',(req,res) => {
+    console.log(req.body);
+    const data = req.body;
+    Book.create(data, (err,createData)=> {
+        if(err) res.send({error: err.message})
+        res.send(createData)
+    })
    
-   console.log("Example app listening at http://%s:%s", host, port)
+});
+
+mongoose.connect('mongodb://localhost/sujit');
+let db = mongoose.connection;
+
+// Check for Db errors
+db.on('error', (err) => console.log(err))
+
+// check connection
+db.once('open', () =>  {
+    console.log("connected to mongodb")
+    app.listen(3001,() => console.log("server running at 3001"));
 })
