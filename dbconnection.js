@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/sujit');
+mongoose.connect('mongodb://localhost/sujit', {useNewUrlParser: true});
 
-module.exports = mongoose.connection
+module.exports = mongoose.connection;
