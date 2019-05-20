@@ -14,8 +14,7 @@
     "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
     "modules": "^0.4.0",
-    "mongoose": "^5.5.2",
-    "node": "^11.14.0"
+    "mongoose": "^5.5.2"
   },
   "devDependencies": {},
   "description": ""
