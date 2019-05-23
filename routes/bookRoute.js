@@ -33,10 +33,13 @@ router.get('/frompug', (req, res) => {
 /// Addding new things
 
 
-// router.put('/books/:title', (req,res) => {
-// const title = req.body.userId;
+//  router.put('/books/edit/:id', (req,res) => {
+//  const id = req.params.id;
+//  const query = {_id: userId};
+//  const data = req.body;
+ 
 
-// })
+//     })
 
 // router.get('/', (req,res) => {
 //     res.send('<h1> Hello mr Sujit </h1>');
