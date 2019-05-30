@@ -1,7 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const methodOverride = require('method-override');
-const pug = require('pug');
 const path = require('path');
 
 const db = require('./dbconnection');

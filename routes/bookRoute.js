@@ -25,12 +25,8 @@ router.delete('/books/:id', function (req, res) {
     const query = {_id: bookId};
     Book.deleteOne(query)
         .then((data) => {
-            console.log(data)
             res.statusCode = 200;
-            
             res.redirect('/books/');
-
-    
         })
         .catch((err) => {
             res.statusCode = 400;
@@ -52,12 +48,5 @@ router.put('/books/:id',function (req, res){
         });
 
 });
-
-router.get('/frompug', (req, res) => {
-    title="My fisrt page with pug";
-    books = ['Crypto', 'DSA','TOC','NSA'];
-    body="Hello world!!"
-    res.render('book', {title: title,body:body,books:books});
-})
 
 module.exports = router;
