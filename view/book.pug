@@ -19,7 +19,13 @@ html(lang="en")
                     td #{book.author}
                     td #{book.content}
                     td 
-                        button delete
+                        form(action="/books/" + book.id + "?_method=DELETE", method="post")
+                            button(type="submit" onclick="submit") Delete
+
                     td
-                        button edit
+                        form(action="/books/" + book.id + "?_method=PUT", method='post')
+                            label(for='title')
+                            input#name.form-control(type='text' name='title' value=book.title required)
+
+                            button(type='submit').btn Edit
                 
